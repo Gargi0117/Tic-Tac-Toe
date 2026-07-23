@@ -1,7 +1,91 @@
-.header_banner{
+.bitcount-grid-double-<uniquifier> {
+    font-family: "Bitcount Grid Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+}
+
+.header_banner {
     display: block;
     height: 200px;
-    width: 480px;
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: none;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.mode_button {
+    background-color: #cdc460c8;
+    color: rgb(0, 0, 0);
+    font-family: "Bitcount Grid Double";
+    height: 30px;
+    width: 180px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-inline:1cm;
+    font-size: 22px;
+    transition: opacity 0.15s, background-color 0.1s
+}
+.mode_button:hover{
+    opacity: 0.9;
+}
+.mode_button:active{
+    opacity: 0.7;
+}
+
+.board_ttc{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr ;
+    width: 300px;
+    height: 300px;
+    gap: 1px;
+    padding-top: 22px;
+    justify-self: center;
+    /* align-self: center; */
+}
+.board_grid{
+    background-color: #2f2d1fc8;
+    border: 2px;
+    border-color: black;
+    cursor: pointer;
+}
+.board_grid:hover{
+    opacity: 0.9;
+}
+.footer_button{
+    display: flex;
+    justify-content: center;
+    margin: 22px;
+}
+.restart_button{
+    background-color: #cdc460c8;
+    color: rgb(0, 0, 0);
+    font-family: "Bitcount Grid Double";
+    height: 30px;
+    width: 180px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-inline:1cm;
+    font-size: 22px;
+    transition: opacity 0.15s, background-color 0.1s
+}
+.restart_button:hover{
+    opacity: 0.9;
+}
+.restart_button:active{
+    opacity: 0.7;
 }
