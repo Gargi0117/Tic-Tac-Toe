@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer ></script>
+    <script type="module" src="script.js" defer ></script>
     <title>Tic Tac Toe</title>
 </head>
 <body>
@@ -19,19 +19,23 @@
         <button class="mode_button" id="mode2">DUAL USER </button>
     </div>
 
+    <div class="msg_container hide">
+        <p id="msg">Winner</p>
+    </div>
     <div class="board_ttc">
-        <div class="board_grid" data-index="0"></div>
-        <div class="board_grid" data-index="1"></div>
-        <div class="board_grid" data-index="2"></div>
-        <div class="board_grid" data-index="3"></div>
-        <div class="board_grid" data-index="4"></div>
-        <div class="board_grid" data-index="5"></div>
-        <div class="board_grid" data-index="6"></div>
-        <div class="board_grid" data-index="7"></div>
-        <div class="board_grid" data-index="8"></div>
+        <button class="cell"></button>
+        <button class="cell"></button>
+        <button class="cell" data-index="2"></button>
+        <button class="cell" data-index="3"></button>
+        <button class="cell" data-index="4"></button>
+        <button class="cell" data-index="5"></button>
+        <button class="cell" data-index="6"></button>
+        <button class="cell" data-index="7"></button>
+        <button class="cell" data-index="8"></button>
     </div>
     <div class="footer_button">
         <button class="restart_button" id="restart"> RESTART</button>
+        <button class="new_button hide">New Game</button>
     </div>
 </body>
 </html>

@@ -10,6 +10,7 @@
         "ELXP" 0;
 }
 
+
 .header_banner {
     display: block;
     height: 200px;
@@ -57,14 +58,22 @@
     justify-self: center;
     /* align-self: center; */
 }
-.board_grid{
+.cell{
     background-color: #2f2d1fc8;
     border: 2px;
-    border-color: black;
+    border-color: rgb(0, 0, 0);
     cursor: pointer;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: "Bitcount Grid Double";
 }
-.board_grid:hover{
+.cell:hover{
     opacity: 0.9;
+}
+.cell:disabled{
+    opacity: 1;
+    color: black;
+    cursor: pointer;
 }
 .footer_button{
     display: flex;
@@ -88,4 +97,39 @@
 }
 .restart_button:active{
     opacity: 0.7;
+}
+.new_button{
+    background-color: #cdc460c8;
+    color: rgb(0, 0, 0);
+    font-family: "Bitcount Grid Double";
+    height: 30px;
+    width: 180px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-inline:1cm;
+    font-size: 22px;
+    transition: opacity 0.15s, background-color 0.1s
+}
+.new_button:hover{
+    opacity: 0.9;
+}
+.new_button:active{
+    opacity: 0.7;
+}
+
+.msg_container{
+    text-align: center;
+    font-family: "Bitcount Grid Double";
+    font-size: 32px;
+    margin: 0%;
+    margin-bottom: 0px;
+}
+#msg{
+    margin: 0;
+    margin-top: 12px;
+    color: rgb(34, 92, 34);
+}
+
+.hide{
+    display: none;
 }
