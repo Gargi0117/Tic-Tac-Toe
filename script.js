@@ -13,14 +13,21 @@ const new_game = document.querySelector(".new_button");
 const msg_container = document.querySelector(".msg_container");
 const msg = document.getElementById("msg");
 
+const clickSound = new Audio("assests/sounds/click.mp3");
+const winSound = new Audio("assests/sounds/win.mp3");
+const drawSound = new Audio("assests/sounds/draw.mp3");
 // ======================
 // Game Variables
 // ======================
 
 let currentPlayer = "O";
-let gameMode = "PVP";
+let gameMode = null;
 let gameOver = false;
 
+// disabling all the boxes initially 
+boxes.forEach(box => {
+    box.disabled = true;
+});
 // ======================
 // Winning Patterns
 // ======================
@@ -43,13 +50,17 @@ const winPattern = [
 // ======================
 
 button_mode1.addEventListener("click", () => {
+    clicking();
     gameMode = "AI";
     resetGame();
+    enableBoxes();
 });
 
 button_mode2.addEventListener("click", () => {
+    clicking();
     gameMode = "PVP";
     resetGame();
+    enableBoxes();
 });
 
 // ======================
@@ -59,6 +70,7 @@ button_mode2.addEventListener("click", () => {
 boxes.forEach((box) => {
 
     box.addEventListener("click", () => {
+        clicking();
 
         if (gameOver) return;
 
@@ -163,7 +175,8 @@ function checkDraw() {
     if (filled === 9) {
 
         gameOver = true;
-
+        drawSound.currentTime = 0;
+        drawSound.play();
         msg.innerText = "DRAW >_<";
 
         msg_container.classList.remove("hide");
@@ -199,7 +212,8 @@ function showWinner(winner) {
             : "Computer";
 
     }
-
+    winSound.currentTime = 0;
+    winSound.play();
     msg.innerText = `${winnerName} Won!!! 🎉`;
 
     msg_container.classList.remove("hide");
@@ -235,6 +249,10 @@ function enableBoxes() {
 
 }
 
+function clicking(){
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
 // ======================
 // Reset
 // ======================
@@ -255,6 +273,12 @@ function resetGame() {
 // Buttons
 // ======================
 
-restart.addEventListener("click", resetGame);
+restart.addEventListener("click", (event) =>{
+    resetGame();
+    clicking();
+});
 
-new_game.addEventListener("click", resetGame);
+new_game.addEventListener("click", (event) =>{
+    resetGame();
+    clicking();
+});
