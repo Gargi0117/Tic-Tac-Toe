@@ -133,3 +133,13 @@
 .hide{
     display: none;
 }
+
+@media (max-width: 480px) {
+    .mode_button {
+        width: 50%;
+        font-size: 14px;
+    }
+    #msg{
+        font-size:1.5rem;
+    }
+}
