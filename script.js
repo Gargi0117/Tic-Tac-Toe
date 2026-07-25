@@ -16,6 +16,7 @@ const msg = document.getElementById("msg");
 const clickSound = new Audio("assests/sounds/click.mp3");
 const winSound = new Audio("assests/sounds/win.mp3");
 const drawSound = new Audio("assests/sounds/draw.mp3");
+const errorSound = new Audio("assests/sounds/error.mp3");
 // ======================
 // Game Variables
 // ======================
@@ -24,10 +25,6 @@ let currentPlayer = "O";
 let gameMode = null;
 let gameOver = false;
 
-// disabling all the boxes initially 
-boxes.forEach(box => {
-    box.disabled = true;
-});
 // ======================
 // Winning Patterns
 // ======================
@@ -70,8 +67,15 @@ button_mode2.addEventListener("click", () => {
 boxes.forEach((box) => {
 
     box.addEventListener("click", () => {
-        clicking();
+        
+        if (gameMode === null) {
+            errorSound.currentTime = 0;
+            errorSound.play();
+            alert("Please select a game mode first!");
+            return;
+        }
 
+        clicking();
         if (gameOver) return;
 
         if (box.innerText !== "") return;
