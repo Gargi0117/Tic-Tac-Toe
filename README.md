@@ -9,8 +9,8 @@ A modern Tic Tac Toe game built with **HTML, CSS, and Vanilla JavaScript** featu
 ## 📸 Preview
 
 <p align="center">
-  <img src="assests/images/preview1.png" width="300" alt="Tic Tac Toe Preview">
-  <img src="assests/images/preview2.png" width="300" alt="Tic Tac Toe Preview">
+  <img src="assests/images/Preview1.png" width="300" alt="Tic Tac Toe Preview">
+  <img src="assests/images/Preview2.png" width="300" alt="Tic Tac Toe Preview">
 </p>
 
 ---
